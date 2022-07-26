@@ -14,7 +14,7 @@ public class TestController {
 
     @GetMapping("")
     public ResponseEntity<Employee> getEmployee() {
-        return new ResponseEntity<>(new Employee("Test", 20), HttpStatus.OK);
+        return new ResponseEntity<>(new Employee(1L, "Test", 20), HttpStatus.OK);
     }
 
 
