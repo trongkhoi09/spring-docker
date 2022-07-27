@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class SenderController {
     private final RabbitTemplate rabbitTemplate;
 
-    @Value("${rabbit.topic-exchange-name}")
-    private final String TOPIC_EXCHANGE_NAME;
+//    @Value("${rabbit.topic-exchange-name}")
+    private final String TOPIC_EXCHANGE_NAME = "spring-boot-exchange";
 
-    @Value("${rabbit.routing-key}")
-    private final String ROUTING_KEY;
+//    @Value("${rabbit.routing-key}")
+    private final String ROUTING_KEY = "foo.bar.baz";
 
     @GetMapping("/{message}")
     public void sendMessage(@PathVariable String message) {

@@ -1,7 +1,5 @@
 package com.nashtech.docker2.controller;
 
-import com.nashtech.docker2.model.Employee;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @GetMapping("")
-    public ResponseEntity<Employee> getEmployee() {
-        return new ResponseEntity<>(new Employee(1L, "Test", 20), HttpStatus.OK);
+    public ResponseEntity<String> getEmployee() {
+        return new ResponseEntity<>("zzz", HttpStatus.OK);
     }
 
 

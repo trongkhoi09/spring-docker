@@ -1,19 +1,20 @@
 spring:
   rabbitmq:
     host: rabbitmq
+    port: 5672
   datasource:
     url: jdbc:mysql://mysqldb:3306/employeedb?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     username: root
     password: root
     jpa:
-      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-      database: MYSQL
-      show-sql: false
-#      properties:
-#        hibernate.id.new_generator_mappings: true
-#        hibernate.cache.use_second_level_cache: true
-#        hibernate.cache.use_query_cache: false
-#        hibernate.generate_statistics: false
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+          show-sql: true
+          format-sql: true
+      hibernate:
+        ddl-auto: update
+
 rabbit:
   topic-exchange-name: spring-boot-exchange
   queue-name: spring-boot
